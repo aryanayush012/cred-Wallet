@@ -11,7 +11,7 @@ router.get("/fetchallnotes", fetchuser, async (req, res) => {
     res.json(notes);
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send("Internal Server Error 1");
   }
 });
 
@@ -20,13 +20,20 @@ router.post(
   "/addnote",
   fetchuser,
   [
-    body("title", "Enter a valid title").isLength({ min: 3 }),
-    body("description", "enter atleast 5 character description").isLength({
-      min: 5,
+    body("BankName", "Enter a valid BankName").isLength({ min: 3 }),
+    body("CardNumber", "enter atleast 5 character CardNumber").isLength({
+      min: 3,
     }),
+    body("CardHolderName", "enter atleast 5 character CardHolderName").isLength(
+      { min: 3 }
+    ),
+    body("ExpiryDate", "enter atleast 5 character ExpiryDate").isLength({
+      min: 3,
+    }),
+    body("cvc", "enter atleast 5 character cvc").isLength({ min: 3 }),
   ],
   async (req, res) => {
-    const { title, description, tag } = req.body;
+    const { BankName, CardNumber, CardHolderName, ExpiryDate, cvc } = req.body;
     try {
       // If there are errors, return Bad request and the errors
       const errors = validationResult(req);
@@ -34,34 +41,42 @@ router.post(
         return res.status(400).json({ errors: errors.array() });
       }
       const note = new Note({
-        title,
-        description,
-        tag,
+        BankName,
+        CardNumber,
+        CardHolderName,
+        ExpiryDate,
+        cvc,
         user: req.user.id,
       });
       const saveNote = await note.save();
       res.json(saveNote);
     } catch (error) {
       console.error(error.message);
-      res.status(500).send("Internal Server Error");
+      res.status(500).send("Internal Server Error 2");
     }
   }
 );
 
 // ROUTE 3: update an existing note: PUT "/api/auth/updatenote".  login required
 router.put("/updatenote/:id", fetchuser, async (req, res) => {
-  const { title, description, tag } = req.body;
+  const { BankName, CardNumber, CardHolderName, ExpiryDate, cvc } = req.body;
   try {
     //create a new note object
     const newNote = {};
-    if (title) {
-      newNote.title = title;
+    if (BankName) {
+      newNote.BankName = BankName;
     }
-    if (description) {
-      newNote.description = description;
+    if (CardNumber) {
+      newNote.CardNumber = CardNumber;
     }
-    if (tag) {
-      newNote.tag = tag;
+    if (CardHolderName) {
+      newNote.CardHolderName = CardHolderName;
+    }
+    if (ExpiryDate) {
+      newNote.ExpiryDate = ExpiryDate;
+    }
+    if (cvc) {
+      newNote.cvc = cvc;
     }
 
     //validate
@@ -82,7 +97,7 @@ router.put("/updatenote/:id", fetchuser, async (req, res) => {
     res.json({ note });
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send("Internal Server Error 3");
   }
 });
 
@@ -103,7 +118,7 @@ router.delete("/deletenote/:id", fetchuser, async (req, res) => {
     res.json({ Success: "note has been deleted", note: note });
   } catch (error) {
     console.error(error.message);
-    res.status(500).send("Internal Server Error");
+    res.status(500).send("Internal Server Error 4");
   }
 });
 module.exports = router;

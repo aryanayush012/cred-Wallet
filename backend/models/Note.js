@@ -1,21 +1,30 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
+
 const NotesSchema = new Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "user",
   },
-  title: {
+  BankName: {
     type: String,
     required: true,
   },
-  description: {
+  CardNumber: {
     type: String,
     required: true,
   },
-  tag: {
+  CardHolderName: {
     type: String,
-    default: "general",
+    required: true,
+  },
+  ExpiryDate: {
+    type: String,
+    required: true,
+  },
+  cvc: {
+    type: String,
+    required: true,
   },
   date: {
     type: Date,

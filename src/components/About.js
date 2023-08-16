@@ -2,31 +2,47 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="d-flex">
-      <div className="container mt-4 p-2">
+    <div className="d-flex text-light">
+      <div className="container" style={{ paddingLeft: "25%" }}>
         <div className="row">
-          <div className="col-md-6">
-            <h2>About Us</h2>
+          <div className="col-md-8">
+            <h2 className="text-center">About Us</h2>
             <p>
-              Welcome to Your Company Name! We are a team of passionate
-              individuals dedicated to providing high-quality products and
-              services to our customers. With years of experience in the
-              industry, we take pride in delivering innovative solutions to meet
-              your needs.
+              I am Ayush Aryan, a passionate software engineer with a strong
+              academic background and a proven track record of success in
+              developing and delivering high-quality software products. I am
+              currently pursuing my Bachelor of Technology in Computer Science &
+              Engineering with a specialization in Artificial Intelligence and
+              Machine Learning at Lakshmi Narain College of Technology &
+              Science, Bhopal.
             </p>
             <p>
-              Our mission is to exceed your expectations and deliver unmatched
-              customer satisfaction. We believe in transparency, integrity, and
-              professionalism in all our interactions.
+              I have a strong understanding of the fundamentals of computer
+              science, including data structures, algorithms, operating systems,
+              and databases. I am also proficient in a variety of programming
+              languages and frameworks, including C++, JavaScript, HTML/CSS,
+              Node.js, Express.js, and React.js.
             </p>
             <p>
-              Whether you're looking for product information, technical support,
-              or assistance with your project, our team is here to help you
-              every step of the way.
+              In my previous role as a Subject Matter Expert Intern at Quesba
+              Edutech Private Limited, I was responsible for developing and
+              delivering high-quality educational content on a variety of
+              topics, including C++, data structures, and algorithms. I also
+              worked on a number of open source projects, including I-Notebook,
+              a personal notebook web application that uses the MERN stack.
             </p>
             <p>
-              Contact us today to learn more about our offerings and how we can
-              assist you.
+              I am a highly motivated and self-driven individual with a strong
+              work ethic. I am also a team player and have excellent
+              communication and problem-solving skills. I am confident that I
+              have the skills and experience necessary to be successful in a
+              software engineering role.
+            </p>
+            <p>
+              I am always looking for new challenges and opportunities to learn
+              and grow. I am also passionate about using technology to solve
+              real-world problems. If you are looking for a talented and
+              motivated software engineer, I encourage you to contact me.
             </p>
           </div>
           <div className="col-md-6"></div>

@@ -40,12 +40,12 @@ const Signup = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="row">
+    <div className="row" style={{ paddingLeft: "13%" }}>
       <div className="mt-3  col-md-4 offset-md-3">
         <h2>Sign Up To Continue</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3">
+        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
           <label htmlFor="name" className="form-label">
             Name
           </label>
@@ -59,7 +59,7 @@ const Signup = (props) => {
             aria-describedby="emailHelp"
           />
         </div>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3">
+        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
           <label htmlFor="email" className="form-label">
             Email address
           </label>
@@ -73,7 +73,7 @@ const Signup = (props) => {
             aria-describedby="emailHelp"
           />
         </div>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3">
+        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
           <label htmlFor="password" className="form-label">
             Password
           </label>
@@ -88,7 +88,7 @@ const Signup = (props) => {
             minLength={5}
           />
         </div>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3">
+        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
           <label htmlFor="cpassword" className="form-label">
             Confirm Password
           </label>

@@ -21,7 +21,13 @@ const NoteState = (props) => {
   };
 
   // Add a Note
-  const addNote = async (title, description, tag) => {
+  const addNote = async (
+    BankName,
+    CardNumber,
+    CardHolderName,
+    ExpiryDate,
+    cvc
+  ) => {
     // TODO: API Call
     // API Call
     const response = await fetch(`${host}/api/notes/addnote`, {
@@ -30,7 +36,13 @@ const NoteState = (props) => {
         "Content-Type": "application/json",
         "auth-token": localStorage.getItem("token"),
       },
-      body: JSON.stringify({ title, description, tag }),
+      body: JSON.stringify({
+        BankName,
+        CardNumber,
+        CardHolderName,
+        ExpiryDate,
+        cvc,
+      }),
     });
 
     const note = await response.json();
@@ -56,7 +68,14 @@ const NoteState = (props) => {
   };
 
   // Edit a Note
-  const editNote = async (id, title, description, tag) => {
+  const editNote = async (
+    id,
+    BankName,
+    CardNumber,
+    CardHolderName,
+    ExpiryDate,
+    cvc
+  ) => {
     // API Call
     const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
       method: "PUT",
@@ -64,7 +83,13 @@ const NoteState = (props) => {
         "Content-Type": "application/json",
         "auth-token": localStorage.getItem("token"),
       },
-      body: JSON.stringify({ title, description, tag }),
+      body: JSON.stringify({
+        BankName,
+        CardNumber,
+        CardHolderName,
+        ExpiryDate,
+        cvc,
+      }),
     });
     const json = response.json();
 
@@ -74,9 +99,11 @@ const NoteState = (props) => {
     for (let index = 0; index < newNotes.length; index++) {
       const element = newNotes[index];
       if (element._id === id) {
-        newNotes[index].title = title;
-        newNotes[index].description = description;
-        newNotes[index].tag = tag;
+        newNotes[index].BankName = BankName;
+        newNotes[index].CardNumber = CardNumber;
+        newNotes[index].CardHolderName = CardHolderName;
+        newNotes[index].ExpiryDate = ExpiryDate;
+        newNotes[index].cvc = cvc;
         break;
       }
     }

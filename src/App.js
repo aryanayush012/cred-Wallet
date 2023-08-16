@@ -8,6 +8,7 @@ import Alert from "./components/Alert";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [alert, setAlert] = useState(null);
@@ -21,7 +22,7 @@ function App() {
     }, 1000);
   };
   return (
-    <>
+    <div style={{ backgroundColor: "#3D3D3D" }}>
       <NoteState>
         <Router>
           <Navbar />
@@ -42,9 +43,10 @@ function App() {
               </Route>
             </Switch>
           </div>
+          <Footer />
         </Router>
       </NoteState>
-    </>
+    </div>
   );
 }
 

@@ -34,12 +34,15 @@ const Login = (props) => {
   };
 
   return (
-    <div className="row justify-content-center">
+    <div
+      className="row justify-content-center my-3"
+      style={{ paddingLeft: "13%" }}
+    >
       <div className="mt-3 col-6 ">
         <h2>Login To Continue</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3 col-6 col-md-4 offset-md-3">
+        <div className="mb-3 col-6 col-md-4 offset-md-3 text-light">
           <label htmlFor="email" className="form-label">
             Email address
           </label>
@@ -52,11 +55,8 @@ const Login = (props) => {
             name="email"
             aria-describedby="emailHelp"
           />
-          <div id="emailHelp" className="form-text">
-            We'll never share your email with anyone else.
-          </div>
         </div>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3">
+        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
           <label htmlFor="password" className="form-label">
             Password
           </label>
@@ -70,7 +70,11 @@ const Login = (props) => {
           />
         </div>
 
-        <button type="submit" className="btn btn-primary col-sm-4 offset-sm-3">
+        <button
+          type="submit"
+          className="btn btn-primary col-sm-4 offset-sm-3"
+          style={{ marginBottom: "40px" }}
+        >
           Submit
         </button>
       </form>
