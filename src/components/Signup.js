@@ -14,7 +14,7 @@ const Signup = (props) => {
     e.preventDefault();
     const { name, email, password } = credentials;
     const response = await fetch(
-      `https://cred-wallet.onrender.com/api/auth/createuser`,
+      ` https://beautiful-shawl-wasp.cyclic.cloud/api/auth/createuser`,
       {
         method: "POST",
         headers: {

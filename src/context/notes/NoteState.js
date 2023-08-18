@@ -2,7 +2,7 @@ import NoteContext from "./noteContext";
 import React, { useState } from "react";
 
 const NoteState = (props) => {
-  const host = "https://cred-wallet.onrender.com";
+  const host = " https://beautiful-shawl-wasp.cyclic.cloud";
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
 
