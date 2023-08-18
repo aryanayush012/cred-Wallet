@@ -43,12 +43,12 @@ const Signup = (props) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
   };
   return (
-    <div className="row" style={{ paddingLeft: "13%" }}>
-      <div className="mt-3  col-md-4 offset-md-3">
+    <div className="row">
+      <div className="container text-center">
         <h2>Sign Up To Continue</h2>
       </div>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
+        <div className="container col-lg-6 col-md-12 col-sm-12 text-light">
           <label htmlFor="name" className="form-label">
             Name
           </label>
@@ -62,7 +62,7 @@ const Signup = (props) => {
             aria-describedby="emailHelp"
           />
         </div>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
+        <div className="container col-lg-6 col-md-12 col-sm-12 text-light">
           <label htmlFor="email" className="form-label">
             Email address
           </label>
@@ -76,7 +76,7 @@ const Signup = (props) => {
             aria-describedby="emailHelp"
           />
         </div>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
+        <div className="container col-lg-6 col-md-12 col-sm-12 text-light">
           <label htmlFor="password" className="form-label">
             Password
           </label>
@@ -91,7 +91,7 @@ const Signup = (props) => {
             minLength={5}
           />
         </div>
-        <div className="mb-3 mb-3 col-6 col-md-4 offset-md-3 text-light">
+        <div className="container col-lg-6 col-md-12 col-sm-12 text-light">
           <label htmlFor="cpassword" className="form-label">
             Confirm Password
           </label>
@@ -106,13 +106,15 @@ const Signup = (props) => {
             minLength={5}
           />
         </div>
-
-        <button
-          type="submit"
-          className="btn btn-primary mb-3 col-6 col-md-4 offset-md-3"
-        >
-          Submit
-        </button>
+        <div className="container text-center my-3">
+          <button
+            type="submit"
+            className="btn btn-primary btn-block my-3"
+            style={{ width: "48%" }}
+          >
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
